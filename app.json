@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "plantora",
+    "name": "Plantora",
     "slug": "plantora",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -9,29 +9,41 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ismailone23.plantora",
+      "icon": {
+        "light": "./assets/images/ios-light.png",
+        "dark": "./assets/images/ios-dark.png",
+        "tinted": "./assets/images/ios-tinted.png"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
+        "monochromeImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
+      "package": "com.ismailone23.plantora",
       "edgeToEdgeEnabled": true
     },
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/icon.png"
     },
     "plugins": [
       "expo-router",
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/splash-icon.png",
+          "image": "./assets/images/splash-icon-dark.png",
           "imageWidth": 200,
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#ffffff",
+          "dark": {
+            "image": "./assets/images/splash-icon-light.png",
+            "backgroundColor": "#000"
+          }
         }
       ]
     ],
