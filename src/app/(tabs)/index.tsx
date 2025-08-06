@@ -13,9 +13,9 @@ export default function Home() {
   return (
     <SafeAreaView
       style={{ backgroundColor: colors.background }}
-      edges={["top"]}
+      edges={["top", "bottom"]}
     >
-      <ScrollView contentContainerStyle={{ paddingBottom: 5 }}>
+      <ScrollView contentContainerStyle={{ paddingBottom: 65 }}>
         <View className="px-5 flex flex-col gap-y-10">
           <Header />
           <SearchBar />

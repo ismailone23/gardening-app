@@ -1,4 +1,5 @@
 import { HapticTab } from "@/components/HapticTab";
+import { Tabbar } from "@/components/tabbar";
 import { Colors } from "@/constants/Colors";
 import { useColorScheme } from "@/hooks/useColorScheme.web";
 import { Tabs } from "expo-router";
@@ -9,6 +10,7 @@ export default function TabLayout() {
   const colorScheme = useColorScheme();
   return (
     <Tabs
+      tabBar={(props) => <Tabbar {...props} />}
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
         tabBarButton: HapticTab,
