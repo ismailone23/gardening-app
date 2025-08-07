@@ -26,18 +26,22 @@ export default function Favourite() {
   return (
     <SafeAreaView
       style={{ backgroundColor: colors.background }}
-      edges={["top"]}
+      edges={["top", "bottom"]}
     >
       <ScrollView
         className="w-full h-full"
-        contentContainerStyle={{ paddingBottom: 5 }}
+        contentContainerStyle={{ paddingBottom: 80 }}
       >
         <View className="flex flex-col w-full">
           <Text
-            style={{ color: colors.text }}
-            className="text-xl py-5 font-bold font-roboto text-center"
+            style={{
+              color: colors.text,
+              fontFamily: "Roboto-Bold",
+              fontSize: 22,
+            }}
+            className="py-5 text-center"
           >
-            Fvourites
+            Favourites
           </Text>
           <View className="w-full flex flex-row flex-wrap px-5 gap-y-2 justify-between">
             {favouritePlant.map(({ id: plantId, name, price, image }, j) => (

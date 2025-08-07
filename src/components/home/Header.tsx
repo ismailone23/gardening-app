@@ -1,26 +1,38 @@
 import { useThemeColor } from "@/hooks/useThemeColor";
+import { Search } from "lucide-react-native";
 import React from "react";
-import { Image, Text, View } from "react-native";
+import { Pressable, Text, View } from "react-native";
 
 export default function Header() {
   const colors = useThemeColor();
   return (
-    <View className="flex flex-row justify-between w-full">
+    <View className="flex flex-row justify-between items-center w-full">
       <View className="flex flex-col ">
-        <Text style={{ color: colors.text }} className="text-2xl font-semibold">
-          Hello!
+        <Text
+          style={{
+            color: colors.text,
+            fontSize: 28,
+            fontFamily: "Roboto-SemiBold",
+          }}
+        >
+          Find your
         </Text>
-        <Text style={{ color: colors.text }}>
-          Start contributing to nature from today
+        <Text
+          style={{
+            color: colors.text,
+            fontSize: 26,
+            fontFamily: "Roboto-SemiBold",
+          }}
+        >
+          favourite plant
         </Text>
       </View>
-      <View className="w-14 overflow-hidden rounded-full h-14">
-        <Image
-          source={require("../../../assets/images/model.jpg")}
-          className="w-full h-full object-conver rounded-full"
-          alt="model"
-        />
-      </View>
+      <Pressable
+        className="border-2 py-3 rounded-full px-2"
+        style={{ borderColor: colors.border }}
+      >
+        <Search size={25} color={"#6b7280"} />
+      </Pressable>
     </View>
   );
 }

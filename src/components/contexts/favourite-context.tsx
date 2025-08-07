@@ -1,4 +1,5 @@
 import { favouriteList as initialFavourites } from "@/constants/data";
+import { generateShortId } from "@/utils";
 import React, { createContext, useContext, useState } from "react";
 
 type Favourite = {
@@ -31,7 +32,7 @@ export const FavouriteProvider: React.FC<{ children: React.ReactNode }> = ({
           ...prev,
           {
             plantId,
-            id: "favourite_" + Math.random() + "_a" + Math.random(),
+            id: generateShortId(),
           },
         ];
       }

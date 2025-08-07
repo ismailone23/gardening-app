@@ -10,21 +10,7 @@ export default function ModelLayout() {
           presentation: "modal",
           animation: "slide_from_bottom",
         }}
-        name="filter"
-      />
-      <Stack.Screen
-        options={{
-          presentation: "modal",
-          animation: "slide_from_bottom",
-        }}
-        name="categories"
-      />
-      <Stack.Screen
-        options={{
-          presentation: "modal",
-          animation: "slide_from_bottom",
-        }}
-        name="special-offers"
+        name="plant/[id]"
       />
     </Stack>
   );

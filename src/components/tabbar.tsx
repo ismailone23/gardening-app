@@ -45,9 +45,9 @@ export function Tabbar({ state, descriptors, navigation }: BottomTabBarProps) {
         bottom: 40,
         paddingVertical: 15,
         marginHorizontal: 18,
-        borderRadius: 50,
+        borderRadius: 60,
       }}
-      className="flex flex-row bg-gray-50 items-center justify-between"
+      className="flex flex-row bg-gray-100 items-center justify-between"
     >
       <Animated.View
         style={[

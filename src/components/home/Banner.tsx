@@ -1,10 +1,10 @@
 import React from "react";
 import { Text, View } from "react-native";
 
-export default function Filter() {
+export default function Banner() {
   return (
     <View>
-      <Text>Filter</Text>
+      <Text>Banner</Text>
     </View>
   );
 }

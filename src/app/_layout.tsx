@@ -18,17 +18,24 @@ SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
-  const [loaded] = useFonts({
-    roboto: require("../../assets/fonts/Roboto-VariableFont_wdth,wght.ttf"),
+
+  const [loaded, error] = useFonts({
+    "Roboto-Thin": require("../../assets/fonts/Roboto-Thin.ttf"),
+    "Roboto-Light": require("../../assets/fonts/Roboto-Light.ttf"),
+    "Roboto-Regular": require("../../assets/fonts/Roboto-Regular.ttf"),
+    "Roboto-Medium": require("../../assets/fonts/Roboto-Medium.ttf"),
+    "Roboto-SemiBold": require("../../assets/fonts/Roboto-SemiBold.ttf"),
+    "Roboto-Bold": require("../../assets/fonts/Roboto-Bold.ttf"),
+    "Roboto-ExtraBold": require("../../assets/fonts/Roboto-ExtraBold.ttf"),
   });
 
   useEffect(() => {
-    if (loaded) {
+    if (loaded || error) {
       SplashScreen.hideAsync();
     }
-  }, [loaded]);
+  }, [loaded, error]);
 
-  if (!loaded) {
+  if (!loaded && !error) {
     return null;
   }
 
