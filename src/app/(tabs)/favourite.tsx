@@ -36,7 +36,7 @@ export default function Favourite() {
           <Text
             style={{
               color: colors.text,
-              fontFamily: "Roboto-Bold",
+              fontFamily: "Nunito-Bold",
               fontSize: 22,
             }}
             className="py-5 text-center"
@@ -49,8 +49,6 @@ export default function Favourite() {
                 key={j}
                 image={image[0]}
                 id={plantId}
-                name={name}
-                price={price}
                 safeWidth={safeWidth / 2}
               />
             ))}

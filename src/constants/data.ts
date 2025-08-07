@@ -165,3 +165,5 @@ export const plants = [
     price: 12.99,
   },
 ];
+
+export const cartData: { id: string; plantId: string; quantity: number }[] = [];

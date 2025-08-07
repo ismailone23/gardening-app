@@ -7,11 +7,7 @@ module.exports = {
   ],
   presets: [require("nativewind/preset")],
   theme: {
-    extend: {
-      fontFamily: {
-        roboto: ["roboto"],
-      },
-    },
+    extend: {},
   },
   plugins: [],
 };

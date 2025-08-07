@@ -20,7 +20,7 @@ export default function Plants({ selected }: { selected: number }) {
         {filteredPlants.length < 1 ? (
           <View className="w-full flex items-start">
             <Text
-              style={{ fontFamily: "Roboto-Medium", fontSize: 16 }}
+              style={{ fontFamily: "Nunito-Medium", fontSize: 16 }}
               className="text-gray-400 italic"
             >
               This Category Plant is Currently Unavailable
@@ -32,8 +32,6 @@ export default function Plants({ selected }: { selected: number }) {
               key={j}
               image={image[0]}
               id={plantId}
-              name={name}
-              price={price}
               safeWidth={safeWidth / 2}
             />
           ))

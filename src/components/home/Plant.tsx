@@ -7,15 +7,11 @@ import { useFavourite } from "../contexts/favourite-context";
 
 export default function Plant({
   id,
-  name,
   image,
-  price,
   safeWidth,
 }: {
   id: string;
-  name: string;
   image: string;
-  price: number;
   safeWidth: number;
 }) {
   const router = useRouter();
@@ -26,7 +22,7 @@ export default function Plant({
     },
     [router]
   );
-  const { toggleFavourite, isFavourite } = useFavourite();
+  const { toggleFavourite, isFavourite, handleAddtoCart } = useFavourite();
   const colors = useThemeColor();
 
   return (
@@ -39,14 +35,15 @@ export default function Plant({
       onPress={() => handlePress(id)}
     >
       <Pressable
-        style={{ bottom: 10, paddingHorizontal: 10 }}
+        style={{ bottom: 10, paddingHorizontal: 8 }}
         className="absolute flex flex-row w-full justify-between items-center z-10"
       >
         <Pressable
           style={{ backgroundColor: colors.background }}
-          className="px-5 py-3 rounded-full"
+          className="px-4 py-3 rounded-full"
+          onPress={() => handleAddtoCart(id)}
         >
-          <Text style={{ fontSize: 16, fontFamily: "Roboto-Medium" }}>
+          <Text style={{ fontSize: 14, fontFamily: "Nunito-Medium" }}>
             Add to Cart
           </Text>
         </Pressable>

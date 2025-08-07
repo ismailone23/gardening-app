@@ -1,3 +1,4 @@
+import { useFavourite } from "@/components/contexts/favourite-context";
 import { tintColorLight } from "@/constants/Colors";
 import { plants } from "@/constants/data";
 import { useThemeColor } from "@/hooks/useThemeColor";
@@ -20,7 +21,7 @@ export default function Plant() {
   const plantData = plants.find((plant) => plant.id === id);
 
   const { width } = useWindowDimensions();
-
+  const { handleAddtoCart } = useFavourite();
   const [height, setHeight] = useState(0);
   const [collapsed, setCollapsed] = useState(true);
 
@@ -62,14 +63,14 @@ export default function Plant() {
             />
           </View>
           <View className="w-full gap-y-5 mt-5 px-5 flex">
-            <View className="w-full items-center flex-row flex justify-between">
-              <Text style={{ fontFamily: "Roboto-Bold", fontSize: 18 }}>
+            <View className="w-full items-center flex-row flex-wrap flex justify-between">
+              <Text style={{ fontFamily: "Nunito-Bold", fontSize: 18 }}>
                 {plantData.name}
               </Text>
               <Pressable className="flex flex-row items-center gap-x-2">
                 <Star size={22} color={tintColorLight} fill={tintColorLight} />
                 <View className="gap-x-1 flex flex-row items-center">
-                  <Text style={{ fontFamily: "Roboto-SemiBold" }}>4.8</Text>
+                  <Text style={{ fontFamily: "Nunito-SemiBold" }}>4.8</Text>
                   <Text>(268 Reviews)</Text>
                 </View>
               </Pressable>
@@ -79,7 +80,7 @@ export default function Plant() {
                 <Text
                   onPress={() => setCollapsed((p) => !p)}
                   style={{
-                    fontFamily: "Roboto-Regular",
+                    fontFamily: "Nunito-Regular",
                     fontSize: 16,
                     lineHeight: 22,
                     color: "#000",
@@ -102,7 +103,7 @@ export default function Plant() {
                 <View className="flex gap-y-1">
                   <Text
                     style={{
-                      fontFamily: "Roboto-Medium",
+                      fontFamily: "Nunito-Medium",
                       fontSize: 14,
                     }}
                     className="text-gray-600"
@@ -111,7 +112,7 @@ export default function Plant() {
                   </Text>
                   <Text
                     style={{
-                      fontFamily: "Roboto-SemiBold",
+                      fontFamily: "Nunito-SemiBold",
                       fontSize: 16,
                     }}
                     className="capitalize"
@@ -122,7 +123,7 @@ export default function Plant() {
                 <View className="flex gap-y-1">
                   <Text
                     style={{
-                      fontFamily: "Roboto-Medium",
+                      fontFamily: "Nunito-Medium",
                       fontSize: 14,
                     }}
                     className="text-gray-600"
@@ -131,7 +132,7 @@ export default function Plant() {
                   </Text>
                   <Text
                     style={{
-                      fontFamily: "Roboto-SemiBold",
+                      fontFamily: "Nunito-SemiBold",
                       fontSize: 16,
                     }}
                     className="capitalize"
@@ -142,7 +143,7 @@ export default function Plant() {
                 <View className="flex gap-y-1">
                   <Text
                     style={{
-                      fontFamily: "Roboto-Medium",
+                      fontFamily: "Nunito-Medium",
                       fontSize: 14,
                     }}
                     className="text-gray-600"
@@ -151,7 +152,7 @@ export default function Plant() {
                   </Text>
                   <Text
                     style={{
-                      fontFamily: "Roboto-SemiBold",
+                      fontFamily: "Nunito-SemiBold",
                       fontSize: 16,
                     }}
                   >
@@ -162,12 +163,12 @@ export default function Plant() {
               <View className="flex mt-5 flex-row items-center justify-between">
                 <View className="flex flex-col ">
                   <Text
-                    style={{ fontFamily: "Roboto-Medium", fontSize: 14 }}
+                    style={{ fontFamily: "Nunito-Medium", fontSize: 14 }}
                     className="text-gray-600"
                   >
                     Price
                   </Text>
-                  <Text style={{ fontFamily: "Roboto-SemiBold", fontSize: 18 }}>
+                  <Text style={{ fontFamily: "Nunito-SemiBold", fontSize: 18 }}>
                     ${plantData.price}
                   </Text>
                 </View>
@@ -175,12 +176,13 @@ export default function Plant() {
                   style={{
                     backgroundColor: tintColorLight,
                   }}
+                  onPress={() => handleAddtoCart(plantData.id)}
                   className="w-52 h-16 flex items-center justify-center rounded-full"
                 >
                   <Text
                     style={{
                       fontSize: 18,
-                      fontFamily: "Roboto-Bold",
+                      fontFamily: "Nunito-Bold",
                       color: "#fff",
                     }}
                   >

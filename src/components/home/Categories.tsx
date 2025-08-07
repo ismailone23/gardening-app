@@ -17,9 +17,9 @@ export default function Categories({
         horizontal
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={{
-          gap: 16,
+          gap: 8,
         }}
-        className="w-full flex-row"
+        className="flex-row"
       >
         {categories.map(({ name, id }) => (
           <Pressable
@@ -28,15 +28,16 @@ export default function Categories({
             style={{
               borderColor: selected === id ? "#71717a" : "#e5e7eb",
             }}
-            className={`px-4 py-2 border-2 rounded-full`}
+            className={`px-5 py-2 border-2 rounded-full`}
           >
             <Text
               style={{
                 color: selected === id ? colors.text : "#3f3f46",
                 fontWeight: "500",
-                fontFamily: "Roboto-Medium",
-                fontSize: 16,
+                fontFamily: "Nunito-Medium",
+                fontSize: 14,
               }}
+              className="flex-1"
             >
               {name}
             </Text>

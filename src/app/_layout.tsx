@@ -20,13 +20,12 @@ export default function RootLayout() {
   const colorScheme = useColorScheme();
 
   const [loaded, error] = useFonts({
-    "Roboto-Thin": require("../../assets/fonts/Roboto-Thin.ttf"),
-    "Roboto-Light": require("../../assets/fonts/Roboto-Light.ttf"),
-    "Roboto-Regular": require("../../assets/fonts/Roboto-Regular.ttf"),
-    "Roboto-Medium": require("../../assets/fonts/Roboto-Medium.ttf"),
-    "Roboto-SemiBold": require("../../assets/fonts/Roboto-SemiBold.ttf"),
-    "Roboto-Bold": require("../../assets/fonts/Roboto-Bold.ttf"),
-    "Roboto-ExtraBold": require("../../assets/fonts/Roboto-ExtraBold.ttf"),
+    "Nunito-Light": require("../../assets/fonts/Nunito-Light.ttf"),
+    "Nunito-Regular": require("../../assets/fonts/Nunito-Regular.ttf"),
+    "Nunito-Medium": require("../../assets/fonts/Nunito-Medium.ttf"),
+    "Nunito-SemiBold": require("../../assets/fonts/Nunito-SemiBold.ttf"),
+    "Nunito-Bold": require("../../assets/fonts/Nunito-Bold.ttf"),
+    "Nunito-ExtraBold": require("../../assets/fonts/Nunito-ExtraBold.ttf"),
   });
 
   useEffect(() => {

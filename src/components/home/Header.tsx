@@ -7,12 +7,12 @@ export default function Header() {
   const colors = useThemeColor();
   return (
     <View className="flex flex-row justify-between items-center w-full">
-      <View className="flex flex-col ">
+      <View className="flex flex-col">
         <Text
           style={{
             color: colors.text,
             fontSize: 28,
-            fontFamily: "Roboto-SemiBold",
+            fontFamily: "Nunito-SemiBold",
           }}
         >
           Find your
@@ -21,7 +21,7 @@ export default function Header() {
           style={{
             color: colors.text,
             fontSize: 26,
-            fontFamily: "Roboto-SemiBold",
+            fontFamily: "Nunito-SemiBold",
           }}
         >
           favourite plant
